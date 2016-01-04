@@ -1,0 +1,5 @@
+'GIT ADD <filename>'
+git add adds a file to the staging area.
+
+'GIT COMMIT'
+Adds all files in the staging area to the repostitory.
