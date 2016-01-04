@@ -1,0 +1,33 @@
+USING 'DIFF'
+Comparing two files without the help of software is tedious.
+Fortunately, the usage of the command 'diff' facilitates this work.
+I can use diff file1 file2 in the command line to find all the differences 
+between two files. The parameter -u gives a uniform output of the 
+differences.
+
+PRIMITIVE VERSION CONTROL
+By saving all changes in different files is one way of version control. 
+
+COMMITTS OF WHOLE REPOSITORY
+The whole repostitory is updated by a new commit because in many cases
+the files are not independent so that a change in one file affects the other
+files.
+
+GIT CLONE
+To clone a repository, one can use the command ’git clone’ followed by a space
+and the repsitory URL. 
+
+GIT LOG
+Returns all commits.
+
+GIT CHECKOUT
+Allows to go back to previous versions to figure out in which commit a certain 
+bug was introduced.
+
+MAKING CHANGES
+Since one can always go back, changes that possibly can break something are
+not to bad.
+
+INITIALIZING A REPOSITORY
+When a repostitory is initialized, an empty repostitory is created and 
+the repository is given an adress at the storage.
