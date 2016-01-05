@@ -1,5 +1,76 @@
-'GIT ADD <filename>'
-git add adds a file to the staging area.
+INITIALIZING A GIT REPOSITORY
+A Git repository skeleton including all files that are neccessary for a Git 
+repository. The command is: git init
 
-'GIT COMMIT'
-Adds all files in the staging area to the repostitory.
+STATUS OF THE FILES IN THE WORKING DIRECTORY
+The state of the files in the working directory can be examined with 
+the command: 'git status'. To simplify and shorten the output, one can
+use the option -s. There are two columns. The first column gives raise to the
+stage area and the second to the working directory.
+?? -> untracked
+M -> modified
+A -> new file added to the staging area.
+
+ADDING FILES TO THE STAGING AREA
+The staging area can be imagined as an area where all the versions of
+the files that should be included in the next commit are contained (whether
+tracked but modified or untracked does not matter).
+The command is: 'git add <filename>'.
+
+DOING A COMMIT	
+All the versions of the files in the staging area can be commited with 
+the command: 'git commit'. Note that only the versions in the staging area
+are commited. If one has staged a file and after that changed this file, 
+the latest changes are not commited because these changes are not staged.
+The option -m allows a commit with an inline comment.
+The option -a allows to skip the staging area so that all files that are
+tracked are commited without having to add them manually to the staging area.
+
+COMPARING FILES IN THE WORKING DIRECTORY WITH FILES IN THE STAGING AREA
+Note that the before any a new file is added to the staging area it contains
+the latest versions that are in the repository. If one uses the command:
+'git diff' without any arguments, the files in the working directory are 
+compared with the files in the staging area.
+
+COMPARING THE FILES IN THE STAGING AREA WITH THE FILES IN THE REPOSITORY
+Command: 'git diff --stage'.
+
+REMOWING FILES FROM THE REPOSITORY	
+To remove files from the repository s.t. these files are not longer shown as
+modified but unstaged, one can use the command: 'git rm <filename>'.
+This command deletes the file from Git and the file is deleted from the
+working directory. To avoid deleting the file from the working directory, 
+one can use the option --cache. 
+
+RENAMING FILES
+To rename files, one can use the command: 'git mv file_from file_to'.
+
+LOOKING AT THE HISTORY OF THE REPOSITORY
+One can look at the history of the repository and, hence, at all commits with
+its messages with command: 'git log'. 
+The option -p shows all differences that were introduced by the different 
+commits.
+The option -2 lists only the last two commits.
+The option --stat lists the commits with a short summary of the status.
+The option --pretty=oneline lists only the ID’s and the commit messages.
+The option --since="a years b month c weeks d days e hours f minutes ago".  
+
+CREATING BRANCHES
+One can create different branches so that more than one developer can work on 
+the files simultanously. Moreover, one can create different versions of
+the software that are distinct in some points. Branches also allow the 
+developer to have one perfect branch which always works, one developer branch
+to develop the code, and one experimental branch.
+To create a new branch, one can use the command: 'git branch <branchname>'.
+To check which branch is in use, the command to use is: 'git branch'.
+The short cut for creating a branch and switching to this branch is:
+'git checkout -b <branchname>'
+
+MERGING BRANCHES
+Suppose one wants to merge branch_1 into branch_2, then one has to checkout
+branch_2 and use the command: 'git merge <name_branch_1>. As a consequnce, 
+there can be merging confilcts that follows from changing the same lines of
+a file in both branches. Then one has to solve the conflict manually by
+going to the file and figure out a solution.
+To abort the merging process when a conflict occurs, one can use the command:
+'git merge --abort'.

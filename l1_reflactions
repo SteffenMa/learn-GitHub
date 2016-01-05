@@ -31,3 +31,8 @@ not to bad.
 INITIALIZING A REPOSITORY
 When a repostitory is initialized, an empty repostitory is created and 
 the repository is given an adress at the storage.
+
+STAGING AREA
+The staging area is between the working directory and the repsitory.
+If one wants to commit more than one file and one file is already ready for
+commiting it can copied into the staging area.
